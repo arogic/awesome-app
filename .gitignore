@@ -131,3 +131,4 @@ dmypy.json
 # Mac Files
 .DS_Store
 **/.DS_Store
+manifests/awesome-app-secret.yml
