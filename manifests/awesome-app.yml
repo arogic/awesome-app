@@ -19,5 +19,8 @@ spec:
         name: awesome-app
         ports:
         - containerPort: 8080
+        imagePullPolicy: Always
+      imagePullSecrets:
+        - name: argocd-demo-secret
       nodeSelector:
         kubernetes.io/os: linux
