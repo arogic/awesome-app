@@ -8,11 +8,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: awsome-app
+      app: awesome-app
   template:
     metadata:
       labels:
-        app: awesomw-app
+        app: awesome-app
     spec:
       containers:
       - image: ghcr.io/arogic/awesome-app:sha256-ec74a3eee2b671ab70fffadc2ced7e1335fe4364ac312985e2c96da9679751bd.sig
