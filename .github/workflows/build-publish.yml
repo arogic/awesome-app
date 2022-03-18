@@ -18,7 +18,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: awesome-app
+  IMAGE_NAME: arogic/awesome-app
   # IMAGE_NAME: ${{ github.repository }}
 
 jobs:
