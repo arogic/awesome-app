@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: awesome-app
+  name: awesome-app-deploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: awsome-app
+  template:
+    metadata:
+      labels:
+        app: awesomw-app
+    spec:
+      containers:
+      - image: ghcr.io/arogic/awesome-app:sha256-ec74a3eee2b671ab70fffadc2ced7e1335fe4364ac312985e2c96da9679751bd.sig
+        name: awesome-app
+        ports:
+        - containerPort: 8080
+      nodeSelector:
+        kubernetes.io/os: linux
