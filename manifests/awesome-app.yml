@@ -5,7 +5,7 @@ metadata:
     app: awesome-app
   name: awesome-app-deploy
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: awesome-app
