@@ -58,5 +58,6 @@ jobs:
           # context: awesome-app
           # context: sample-app/azure-vote
           push: true
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          # tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:1.0.${{ env.GITHUB_RUN_NUMBER }}
           labels: ${{ steps.meta.outputs.labels }}
