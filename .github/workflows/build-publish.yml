@@ -62,12 +62,27 @@ jobs:
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}.${{ github.run_number }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Bump Version
+      # - name: Bump Version
+      #   run: |
+      #     sed -i "s|1.0.[0-9]*|1.0.${GITHUB_RUN_NUMBER}|g" manifests/awesome-app.yml
+      #     cat manifests/awesome-app.yml
+      #     # git config --global user.email "bot@example.com"
+      #     # git config --global user.name "git bot"
+      #     # git add .
+      #     # git commit -am 'bump version ${GITHUB_RUN_NUMBER}'
+      #     # git push
+
+      - name: Commit files
         run: |
           sed -i "s|1.0.[0-9]*|1.0.${GITHUB_RUN_NUMBER}|g" manifests/awesome-app.yml
-          cat manifests/awesome-app.yml
-          git config --global user.email "bot@example.com"
-          git config --global user.name "git bot"
-          git add .
-          git commit -am 'bump version ${GITHUB_RUN_NUMBER}'
-          git push
+          git config remote.origin.url https://github.com/arogic/awesome-app.git
+          git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+          git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
+          git add -A
+          git commit -am "bump version ${GITHUB_RUN_NUMBER}"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
