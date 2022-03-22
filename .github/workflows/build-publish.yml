@@ -66,3 +66,6 @@ jobs:
         run: |
           sed -i "s|1.0.[0-9]*|1.0.${GITHUB_RUN_NUMBER}|g" manifests/awesome-app.yml
           cat manifests/awesome-app.yml
+          git add .
+          git commit -am 'bump version ${GITHUB_RUN_NUMBER}'
+          git push
