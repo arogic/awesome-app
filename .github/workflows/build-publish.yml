@@ -66,6 +66,8 @@ jobs:
         run: |
           sed -i "s|1.0.[0-9]*|1.0.${GITHUB_RUN_NUMBER}|g" manifests/awesome-app.yml
           cat manifests/awesome-app.yml
+          git config --global user.email "bot@example.com"
+          git config --global user.name "git bot"
           git add .
           git commit -am 'bump version ${GITHUB_RUN_NUMBER}'
           git push
