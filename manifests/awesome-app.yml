@@ -15,7 +15,7 @@ spec:
         app: awesome-app
     spec:
       containers:
-      - image: ghcr.io/arogic/awesome-app:991b83fa53ff0bfd88cd775b0a452c8794cfbafc
+      - image: ghcr.io/arogic/awesome-app:1.0.26
         name: awesome-app
         ports:
         - containerPort: 8080
