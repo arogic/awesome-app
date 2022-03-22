@@ -49,6 +49,7 @@ jobs:
 
       - name: Show env
         run: |
+          echo "GITHUB_RUN_NUMBER ${GITHUB_RUN_NUMBER}"
           env
 
       - name: Build and push Docker image
