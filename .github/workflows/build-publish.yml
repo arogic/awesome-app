@@ -17,7 +17,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: arogic/awesome-app:1.0.${{GITHUB_RUN_NUMBER}}
+  IMAGE_NAME: arogic/awesome-app:1.0.${{ env.GITHUB_RUN_NUMBER }}
   # IMAGE_NAME: ${{ github.repository }}
 
 jobs:
