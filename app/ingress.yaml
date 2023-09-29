@@ -4,6 +4,8 @@ kind: Ingress
 metadata:
   name: my-ingress
   namespace: playground
+  annotations:
+    kubernetes.io/ingress.class: nginx
 spec:
   tls:
   - hosts:
