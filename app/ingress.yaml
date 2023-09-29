@@ -1,0 +1,22 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+  namespace: playground
+spec:
+  tls:
+  - hosts:
+    - veng.dev
+    secretName: veng-tls
+  rules:
+  - host: veng.dev
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: awesome-app
+            port:
+              number: 8081
