@@ -21,6 +21,6 @@ spec:
         - containerPort: 8080
         imagePullPolicy: Always
       imagePullSecrets:
-        - name: argocd-demo-secret
+        - name: argocd-pull-secret
       nodeSelector:
         kubernetes.io/os: linux
