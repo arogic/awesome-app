@@ -11,4 +11,5 @@ spec:
     targetPort: 8080
   selector:
     app: awesome-app
-  type: LoadBalancer
+  type: ClusterIP
+  # type: LoadBalancer
