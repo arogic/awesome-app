@@ -16,14 +16,14 @@ spec:
         app: awesome-app
     spec:
       containers:
-      - image:  nginx
-      # - image: ghcr.io/arogic/awesome-app:1.0.55
+      # - image:  nginx
+      - image: ghcr.io/arogic/awesome-app:1.0.55
         name: awesome-app
         ports:
-        # - containerPort: 8080
-        - containerPort: 80
+        - containerPort: 8080
+        # - containerPort: 80
         imagePullPolicy: Always
-      # imagePullSecrets:
-      #   - name: argocd-pull-secret
+      imagePullSecrets:
+        - name: argocd-pull-secret
       nodeSelector:
         kubernetes.io/os: linux
