@@ -29,6 +29,5 @@ spec:
           ports:
             - name: http
               containerPort: {{ .Values.container.port }}
-          {{- end }}
       nodeSelector:
         kubernetes.io/os: 
